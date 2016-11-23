@@ -163,30 +163,7 @@ for word in arr:
 				temp=bi_dict[index]
 				for item in temp:
 					list_bi.append(item)
-		'''
-		max_freq=0
-		check_dict={}
-		for element in list_bi:
-			if(check_dict.has_key(element)):
-				check_dict[element]+=1
-				if(check_dict[element]>max_freq):
-					possible_word=element
-					max_freq=check_dict[element]
-			else:
-				check_dict[element]=1
-				if(check_dict[element]>max_freq):
-					possible_word=element
-					max_freq=check_dict[element]
-		
-		if(max_freq>0):
-			print '\''+word+ "\' corrected to "+possible_word
-			org_query=org_query.replace(word,possible_word)
-			list_doc=obj_dict[possible_word]['doc'][1] #retrieve posting list
-			if(len(main_list)==0):
-				main_list=list_doc
-			else:
-				main_list=list(set(main_list) & set(list_doc))
-			'''
+
 		if(Counter(list_bi).most_common(1)[0][0][1]>0):
 
 			all_possible_word= [ite for ite, it in Counter(list_bi).most_common()]
